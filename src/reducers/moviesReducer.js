@@ -5,15 +5,18 @@ const initialState = {
   movieList: [],
   filteredList: [],
   page: 2,
+  castList: [],
 };
 
 const moviesReducer = (state = initialState, action) => {
   let movieList;
   let filteredList;
+  let castList;
   let page = 2;
 
   switch (action.type) {
     case types.GET_MOVIE: {
+      console.log(action.payload);
       movieList = state.movieList.slice();
       action.payload.results.forEach((movie) => movieList.push(movie));
       filteredList = [...movieList];
@@ -44,6 +47,16 @@ const moviesReducer = (state = initialState, action) => {
         movieList,
         filteredList,
         page,
+      }
+    }
+
+    case types.GET_CAST: {
+      console.log(action.payload);
+      castList = state.castList.slice();
+      action.payload.cast.forEach((cast) => castList.push(cast));
+      return {
+        ...state, 
+        castList
       }
     }
 

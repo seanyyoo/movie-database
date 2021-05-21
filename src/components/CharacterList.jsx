@@ -1,23 +1,24 @@
 import React from "react";
 import Styles from "./MovieItem.module.css";
-import { Link } from "react-router-dom";
 
-const MovieItem = (props) => {
+
+const CharacterList = (props) => {
+  console.log('check', props.profile)
   const URI = "https://image.tmdb.org/t/p/w500/";
-  const images = URI + props.post;
+  const images = URI + props.profile;
   
   return (
       <div className={Styles.movieItem}>
         <a href="">
-        <Link to={`/${props.id}`}>
           <img className={Styles.posters} src={images} alt="" />
-          </Link>
         </a>
+        <span className={Styles.name}>{props.name}</span>
+        <span className={Styles.character}>{props.character}</span>
       </div>
     
   );
 };
 
-export default MovieItem;
+export default CharacterList;
 
 // https://image.tmdb.org/t/p/w500/

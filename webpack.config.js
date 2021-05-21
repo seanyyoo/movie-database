@@ -24,11 +24,20 @@ module.exports = {
     ],
   },
   
-  mode: 'development',
+  mode: process.env.NODE_ENV,
 
   plugins: [
     new HtmlWebpackPlugin({
       template: "public/index.html",
     }),
   ],
+
+  devServer: {
+    proxy: {
+      '/api': 'http://localhost:3000',
+    },
+    port: 8080,
+    hot: true,
+    inline: true,
+  }
 };

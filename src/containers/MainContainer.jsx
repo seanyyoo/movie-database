@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import MoviesContainer from './MoviesContainer.jsx';
 import NavContainer from './NavContainer.jsx';
 import PreviewContainer from './PreviewContainer.jsx';
-import store from '../store';
 import Styles from './MainContainer.module.css';
-
+import { Switch, Route } from 'react-router-dom';
+import BottomContainer from './BottomContainer.jsx';
+import CharactersDetail from './CharactersDetail.jsx';
 
 export default function MainContainer(props) {
   const dispatch = useDispatch();
@@ -34,8 +35,12 @@ export default function MainContainer(props) {
     <div className={Styles.container}>
       <div className="outerBox">
         <NavContainer />
-        <PreviewContainer />
-        <MoviesContainer />
+        <Switch>
+          <Route path="/" exact component={BottomContainer}/>
+          <Route path="/preview" exact component={PreviewContainer}/>
+          <Route path="/movie" exact component={MoviesContainer}/>
+          <Route path="/:id" component={CharactersDetail}/>
+        </Switch>
       </div>
   </div>
   );

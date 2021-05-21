@@ -4,6 +4,7 @@ import Styles from './MovieList.module.css'
 import MovieItem from './MovieItem.jsx';
 
 
+
 function MovieList(props) {
   const movies = useSelector(state => state.movies.filteredList)
   const moviesArr = [];
