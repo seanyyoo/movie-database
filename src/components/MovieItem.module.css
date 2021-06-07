@@ -9,5 +9,21 @@
   width: 100%;
   height: auto;
   border-radius: 15px;
+  transition: all 300ms ease;
 }
 
+.posters:hover {
+  transform: scale(1.06);
+}
+
+.name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.character {
+  font-size: 15px;
+  display: block;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: rgb(70, 70, 70);
+}

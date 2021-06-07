@@ -20,6 +20,7 @@ const moviesReducer = (state = initialState, action) => {
       movieList = state.movieList.slice();
       action.payload.results.forEach((movie) => movieList.push(movie));
       filteredList = [...movieList];
+      console.log('filteredList', filteredList)
       return {
         ...state, 
         movieList,

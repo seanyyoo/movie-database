@@ -56,7 +56,7 @@ function CharactersDetail({ match }) {
               character={cast.character}
               key={cast.id}
             />
-          ))
+          ))  
         ) : (
           <div></div>
         )}
